@@ -2,7 +2,13 @@ Data-driven Language Typology
 
 * Introduction
 
-This repository contains the...
+This repository contains the code implemented in my master's thesis titled
+/Data-driven Language Typology/.
+
+ - TODO: explain what are the main things in the thesis briefly.
+ - TODO: explain which pipeline corresponds to which part of the thesis.
+ - TODO: link to eThesis.
+
 
 * Installation
 
@@ -117,13 +123,13 @@ file (~trigram_phoneme.perplexity~, ~europarl_dir~, ~$HOME/data/phon~).
 
 * Licensing
 
-Python code is licensed under GPL-3.0 (or later).  See COPYING for the license
-text.
+Python code is licensed under GPL-3.0 (or later).  See ~COPYING~ for the
+license text.
 
 Doulos IPA-symbol fonts (for use within the LaTeX-utilizing modules) are
-licensed under the SIL Open Font License (OFL) available in COPYING.OFL.  The
-font files are named ~DoulosSIL-R.ttf~ in two separate directories.  For more
-information about the Doulos font, please see
+licensed under the SIL Open Font License (OFL) available in ~COPYING.OFL~.
+The font files are named ~DoulosSIL-R.ttf~ in two separate directories.  For
+more information about the Doulos font, please see
 https://software.sil.org/doulos/.
 
 
@@ -131,6 +137,6 @@ https://software.sil.org/doulos/.
 
 Phoneme mapped pipelines are not part of the thesis work and hence not further
 documented.  They can be run with the phoneme distance data as provided by
-Deri et al.  See "Grapheme-to-Phoneme Models for (Almost) Any Language" (Aliya
-Deri and Kevin Knight), Proc. ACL, 2016.  And most importantly
-https://isi.edu/~aderi/.
+Deri and Knight.  See "Grapheme-to-Phoneme Models for (Almost) Any Language"
+(Aliya Deri and Kevin Knight), Proc. ACL, 2016. See https://isi.edu/~aderi/
+for the actual files.
