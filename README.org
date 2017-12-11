@@ -1,0 +1,136 @@
+Data-driven Language Typology
+
+* Introduction
+
+This repository contains the...
+
+* Installation
+
+While the original development was done on a Mac, the full installation mainly
+requires a working Python 2.7 and a working eSpeak installation.  Windows
+compatibility is unknown.
+
+Pimlico NLP processing toolkit used here.  First you need to get that running.
+The documentation for Pimlico is located at
+http://pimlico.readthedocs.io/en/latest/.
+
+
+** Ubuntu 16.04.3 desktop installation
+
+This is a test installation to gauge what kind of packages should be required
+on a typical Linux distribution.  This is not a supported or in any special
+endorsed way to run the code or experiments.
+
+First install all central dependencies.
+#+BEGIN_SRC sh
+sudo apt install git python-virtualenv python-wheel python-pip python-numpy
+#+END_SRC
+
+Then check out the code.
+#+BEGIN_SRC sh
+git clone https://github.com/guaq/data-driven-language-typology.git
+#+END_SRC
+
+To install configure and get Pimlico running, the following commands can be
+used.
+
+First configure Pimlico's stores.  Please see Pimlico documentation on how
+these should properly be set up.
+#+BEGIN_SRC sh
+cat >$HOME/.pimlico <<EOL
+long_term_store=$HOME/data/pimlico-lts
+short_term_store=$HOME/data/pimlico-sts
+email_recipients=$(whoami)
+email_sender=$(whoami)
+EOL
+#+END_SRC
+
+Then download pimlico.sh to the code repository root dir and bootstrap it.
+#+BEGIN_SRC sh
+cd data-driven-language-typology
+wget https://raw.githubusercontent.com/markgw/pimlico/v0.7/admin/bootstrap.py
+python bootstrap.py trigram_phoneme_perplexity.conf
+#+END_SRC
+
+Download Europarl corpus and extract it.
+#+BEGIN_SRC sh
+cd
+mkdir data
+cd data
+wget http://www.statmt.org/europarl/v7/europarl.tgz
+tar xvvzf europarl.tgz
+#+END_SRC
+
+Now the extracted Europarl text corpus should be in ~$HOME/data/txt~, which can
+now be used as the ~europarl_dir~ parameter.  At this point modify
+~trigram_text_perplexity.conf~ parameter to point that directory.
+
+
+Try get a status for the Pimlico pipeline.
+
+#+BEGIN_SRC sh
+./pimlico.sh trigram_text_perplexity.conf status
+#+END_SRC
+
+You might need to rerun the command.  It seems to fail on the first try.  Then
+run the whole pipeline.  First for text so we can verify most things work.
+
+#+BEGIN_SRC sh
+./pimlico.sh trigram_text_perplexity.conf run 1...1037
+#+END_SRC
+
+Some of the later analysis and reporting steps might fail due to missing R or
+LaTeX dependencies.  The following remedied the situation partly on this
+Ubuntu setup, but multiple modules still fail.  Your mileage may vary.
+
+#+BEGIN_SRC sh
+sudo apt install r-base r-cran-gplots r-cran-phangorn
+#+END_SRC
+
+Then proceed into phonetic transcription.  For this we first need to install
+eSpeak.
+
+#+BEGIN_SRC sh
+sudo apt install espeak
+#+END_SRC
+
+Then transcribe.  The first command initializes a transcription state
+database.  It is basically a queue for transcribable documents.  The later
+command can then be parallelized (i.e. you can run multiple instances of it in
+different terminals) and it should just work.
+
+#+BEGIN_SRC sh
+cd
+python /path/to/data-driven-language-typology/src/python/transcribe_europarl.py transcription_state.db init txt phon
+python /path/to/data-driven-language-typology/src/python/transcribe_europarl.py transcription_state.db transcribe
+#+END_SRC
+
+Then proceed into the phonetic pipelines.  First remember to set the path to
+the phonetic transcription corpus correct in the corresponding configuration
+file (~trigram_phoneme.perplexity~, ~europarl_dir~, ~$HOME/data/phon~).
+
+#+BEGIN_SRC sh
+./pimlico.sh trigram_phoneme_perplexity.conf --variant three_families status -s
+./pimlico.sh trigram_phoneme_perplexity.conf --variant three_families run 1...563
+#+END_SRC
+
+
+* Licensing
+
+Python code is licensed under GPL-3.0 (or later).  See COPYING for the license
+text.
+
+Doulos IPA-symbol fonts (for use within the LaTeX-utilizing modules) are
+licensed under the SIL Open Font License (OFL) available in COPYING.OFL.  The
+font files are named ~DoulosSIL-R.ttf~ in two separate directories.  For more
+information about the Doulos font, please see
+https://software.sil.org/doulos/.
+
+
+* Miscellaneous
+
+Phoneme mapped pipelines are not part of the thesis work and hence not further
+documented.  They can be run with the phoneme distance data as provided by
+Deri et al.  See "Grapheme-to-Phoneme Models for (Almost) Any Language" (Aliya
+Deri and Kevin Knight), Proc. ACL, 2016.  And most importantly
+https://isi.edu/~aderi/.
