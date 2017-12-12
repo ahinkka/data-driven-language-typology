@@ -1,10 +1,9 @@
-Data-driven Language Typology
+#+TITLE: Data-driven Language Typology
 
 * Introduction
 
-This repository contains the code implemented in my master's thesis titled
-/Data-driven Language Typology/.  This code distribution contains the code
-used for the thesis.
+This repository contains the code written for the research for my master's
+thesis titled /Data-driven Language Typology/.
 
 The thesis studies the use of n-gram language models in the context of
 language typology, more specifically, computing distances between languages.
@@ -14,6 +13,7 @@ translation corpus by automatic phonetic transcription.
 The tests are structured and run using the excellent Pimlico (NLP) Processing
 Toolkit by Mark Granroth-Wilding.  Please see Pimlico's own documentation at
 http://pimlico.readthedocs.org/ for more information on the subject.
+
 
 
  - TODO: explain which pipeline corresponds to which part of the thesis.
