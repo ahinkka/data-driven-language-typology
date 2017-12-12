@@ -14,10 +14,11 @@ The tests are structured and run using the excellent Pimlico (NLP) Processing
 Toolkit by Mark Granroth-Wilding.  Please see Pimlico's own documentation at
 http://pimlico.readthedocs.org/ for more information on the subject.
 
+My intention is to keep this repository as is to reflect what's in the thesis.
+The continuation of my research on the subject is elsewhere.
 
-
- - TODO: explain which pipeline corresponds to which part of the thesis.
  - TODO: link to eThesis.
+ - TODO: link to where the most current work on the subject is.
 
 
 * Installation
@@ -26,16 +27,14 @@ While the original development was done on a Mac, the full installation mainly
 requires a working Python 2.7 and a working eSpeak installation.  Windows
 compatibility is unknown.
 
-Pimlico NLP processing toolkit used here.  First you need to get that running.
-The documentation for Pimlico is located at
-http://pimlico.readthedocs.io/en/latest/.
-
 
 ** Ubuntu 16.04.3 desktop installation
 
 This is a test installation to gauge what kind of packages should be required
 on a typical Linux distribution.  This is not a supported or in any special
-endorsed way to run the code or experiments.
+endorsed way to run the code or the experiments.  Furthermore, some of the
+analysis steps written in R, especially the ones not used in the thesis may be
+broken.
 
 First install all central dependencies.
 #+BEGIN_SRC sh
