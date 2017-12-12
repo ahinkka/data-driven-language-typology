@@ -1,3 +1,6 @@
+# This file was obtained from
+#  https://github.com/dlenski/python-vipaccess/blob/HEAD/vipaccess/patharg.py
+#
 # A slightly earlier version of this module was submitted to the Python
 # standard library SIG, but never accepted (or rejected):
 #
