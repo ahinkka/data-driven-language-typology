@@ -3,9 +3,19 @@ Data-driven Language Typology
 * Introduction
 
 This repository contains the code implemented in my master's thesis titled
-/Data-driven Language Typology/.
+/Data-driven Language Typology/.  This code distribution contains the code
+used for the thesis.
 
- - TODO: explain what are the main things in the thesis briefly.
+The thesis studies the use of n-gram language models in the context of
+language typology, more specifically, computing distances between languages.
+The work is done on phonetic transcripts derived from the Europarl parallel
+translation corpus by automatic phonetic transcription.
+
+The tests are structured and run using the excellent Pimlico (NLP) Processing
+Toolkit by Mark Granroth-Wilding.  Please see Pimlico's own documentation at
+http://pimlico.readthedocs.org/ for more information on the subject.
+
+
  - TODO: explain which pipeline corresponds to which part of the thesis.
  - TODO: link to eThesis.
 
@@ -123,8 +133,13 @@ file (~trigram_phoneme.perplexity~, ~europarl_dir~, ~$HOME/data/phon~).
 
 * Licensing
 
-Python code is licensed under GPL-3.0 (or later).  See ~COPYING~ for the
-license text.
+Most Python code is under the copyright of the University of Helsinki and it
+is licensed under the GPL-3.0 (or later) license.  See ~COPYING~ file for the
+GPL license text.
+
+~src/python/patharg.py~ is under the copyright of Daniel Lenski and it is
+licensed under the MIT license.  The MIT license text is included in that
+file.
 
 Doulos IPA-symbol fonts (for use within the LaTeX-utilizing modules) are
 licensed under the SIL Open Font License (OFL) available in ~COPYING.OFL~.
