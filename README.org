@@ -1,7 +1,5 @@
 #+TITLE: Data-driven Language Typology
 
-* Introduction
-
 This repository contains the code written for the research for my master's
 thesis titled /Data-driven Language Typology/.
 
