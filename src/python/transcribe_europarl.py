@@ -33,7 +33,7 @@ import sqlite3
 
 import europarl_utils
 from espeak_transcript import espeak_transcribe
-from pathtype import PathType
+from patharg import PathType
 
 
 Document = collections.namedtuple('Document', ['language', 'relative_path'])
