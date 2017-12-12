@@ -120,7 +120,7 @@ python /path/to/data-driven-language-typology/src/python/transcribe_europarl.py 
 
 Then proceed into the phonetic pipelines.  First remember to set the path to
 the phonetic transcription corpus correct in the corresponding configuration
-file (~trigram_phoneme.perplexity~, ~europarl_dir~, ~$HOME/data/phon~).
+file (~trigram_phoneme_perplexity.conf~, ~europarl_dir~, ~$HOME/data/phon~).
 
 #+BEGIN_SRC sh
 ./pimlico.sh trigram_phoneme_perplexity.conf --variant three_families status -s
