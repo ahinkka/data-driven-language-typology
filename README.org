@@ -3,10 +3,10 @@
 This repository contains the code written for the research for my master's
 thesis titled /Data-driven Language Typology/.
 
-The thesis studies the use of n-gram language models in the context of
-language typology, more specifically, computing distances between languages.
-The work is done on phonetic transcripts derived from the Europarl parallel
-translation corpus by automatic phonetic transcription.
+In the thesis I describe how n-gram language models can be used in the context
+of language typology, more specifically, in computing distances between
+languages.  The work is done on phonetic transcripts derived from the Europarl
+parallel translation corpus by automatic phonetic transcription.
 
 The tests are structured and run using the excellent Pimlico (NLP) Processing
 Toolkit by Mark Granroth-Wilding.  Please see Pimlico's own documentation at
@@ -58,7 +58,8 @@ email_sender=$(whoami)
 EOL
 #+END_SRC
 
-Then download pimlico.sh to the code repository root dir and bootstrap it.
+Then download ~bootstrap.py~ to the code repository root dir and bootstrap
+Pimlico.  After that Pimlico can be run with ~pimlico.sh~.
 #+BEGIN_SRC sh
 cd data-driven-language-typology
 wget https://raw.githubusercontent.com/markgw/pimlico/v0.7/admin/bootstrap.py
