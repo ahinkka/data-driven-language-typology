@@ -2,7 +2,7 @@
 
 This repository contains the code written for the research for my master's
 thesis titled 
-[[http://urn.fi/URN:NBN:fi:hulib-201804041570][/Data-driven Language Typology/]].
+/[[http://urn.fi/URN:NBN:fi:hulib-201804041570][Data-driven Language Typology]]/.
 
 In the thesis I describe how n-gram language models can be used in the context
 of language typology, more specifically, in computing distances between
