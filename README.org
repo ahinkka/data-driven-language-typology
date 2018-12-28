@@ -1,7 +1,8 @@
 #+TITLE: Data-driven Language Typology
 
 This repository contains the code written for the research for my master's
-thesis titled /Data-driven Language Typology/.
+thesis titled 
+[[http://urn.fi/URN:NBN:fi:hulib-201804041570][/Data-driven Language Typology/]].
 
 In the thesis I describe how n-gram language models can be used in the context
 of language typology, more specifically, in computing distances between
@@ -13,10 +14,8 @@ Toolkit by Mark Granroth-Wilding.  Please see Pimlico's own documentation at
 http://pimlico.readthedocs.org/ for more information on the subject.
 
 My intention is to keep this repository as is to reflect what's in the thesis.
-The continuation of my research on the subject is elsewhere.
-
- - TODO: link to eThesis.
- - TODO: link to where the most current work on the subject is.
+The continuation of my research on the subject is 
+[[https://github.com/guaq/dlt][elsewhere]].
 
 
 * Installation
