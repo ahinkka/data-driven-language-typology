@@ -14,8 +14,6 @@ Toolkit by Mark Granroth-Wilding.  Please see Pimlico's own documentation at
 http://pimlico.readthedocs.org/ for more information on the subject.
 
 My intention is to keep this repository as is to reflect what's in the thesis.
-The continuation of my research on the subject is 
-[[https://github.com/guaq/dlt][elsewhere]].
 
 
 * Installation
@@ -40,7 +38,7 @@ sudo apt install git python-virtualenv python-wheel python-pip python-numpy
 
 Then check out the code.
 #+BEGIN_SRC sh
-git clone https://github.com/guaq/data-driven-language-typology.git
+git clone https://github.com/ahinkka/data-driven-language-typology.git
 #+END_SRC
 
 To install configure and get Pimlico running, the following commands can be
